@@ -23,7 +23,6 @@ class Post
         $this->body = $body;
     }
 
-
     public static function all()
     {
         return cache()->rememberForever(
