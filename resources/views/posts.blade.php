@@ -6,6 +6,7 @@
                     {{ $post->title }}
                 </a>
             </h1>
+
             {{ $post->excerpt }}
         </article>
     @endforeach
