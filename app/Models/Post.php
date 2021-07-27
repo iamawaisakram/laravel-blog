@@ -18,4 +18,9 @@ class Post extends Model
 
     // * Specify properties that you want to mass assign
     // ! protected $fillable = ['title', 'excerpt', 'body'];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }
