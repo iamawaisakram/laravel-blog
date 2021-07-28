@@ -9,6 +9,8 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $with = ['category', 'author'];
+
     // * Don't guard anything and disallow any mass assignment using array
     // * Unless you're in complete control of it.
     protected $guarded = [];
