@@ -28,8 +28,6 @@
                 <p>
                     {{ $post->excerpt }}
                 </p>
-
-
             </div>
 
             <footer class="flex justify-between items-center mt-8">
