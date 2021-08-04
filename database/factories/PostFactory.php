@@ -26,10 +26,14 @@ class PostFactory extends Factory
         return [
             'user_id' => User::factory(),
             'category_id' => Category::factory(),
-            'slug' => $this->faker->slug(),
+            'slug' => $this->faker->unique()->slug(),
             'title' => $this->faker->sentence(),
-            'excerpt' => $this->faker->sentence(),
-            'body' => $this->faker->paragraph(),
+            'excerpt' => collect($this->faker->paragraphs(2))->map(function ($item) {
+                return "<p>{$item}</p>";
+            })->implode(''),
+            'body' => collect($this->faker->paragraphs(12))->map(function ($item) {
+                return "<p>{$item}</p>";
+            })->implode(''),
         ];
     }
 }
